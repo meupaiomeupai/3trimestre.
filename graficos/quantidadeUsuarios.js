@@ -1,15 +1,16 @@
-import { getCSS, tickConfig, criarGrafico } from "./common.js"
+import { getCSS, tickConfig, criarGrafico } from "./common.js";
 
-async function quantidadeUsuariosPorRede() {
-    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/numero-usuarios.json'
+async function quantidadeUsuariosAprendendoViolao() {
+    const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/violao-usuarios.json'  // Use uma URL com dados relevantes sobre violão
     const res = await fetch(url)
     const dados = await res.json()
-    const nomeDasRedes = Object.keys(dados)
-    const quantidadeDeUsuarios = Object.values(dados)
+
+    const nomeDasPlataformas = Object.keys(dados)  // Exemplo de plataformas de aprendizado de violão
+    const quantidadeDeUsuarios = Object.values(dados)  // Número de usuários em cada plataforma
 
     const data = [
         {
-            x: nomeDasRedes, 
+            x: nomeDasPlataformas, 
             y: quantidadeDeUsuarios, 
             type: 'bar',
             marker: {
@@ -22,7 +23,7 @@ async function quantidadeUsuariosPorRede() {
         plot_bgcolor: getCSS('--bg-color'),
         paper_bgcolor: getCSS('--bg-color'),
         title: {
-            text: 'Redes sociais com mais usuários no mundo',
+            text: 'Plataformas com mais usuários aprendendo violão',
             x: 0,
             font: {
                 color: getCSS('--primary-color'),
@@ -33,7 +34,7 @@ async function quantidadeUsuariosPorRede() {
         xaxis: {
             tickfont: tickConfig,
             title: {
-                text: 'nome das redes sociais',
+                text: 'Plataformas de aprendizado de violão',
                 font: {
                     color: getCSS('--secondary-color')
                 }
@@ -42,16 +43,15 @@ async function quantidadeUsuariosPorRede() {
         yaxis: {
             tickfont: tickConfig,
             title: {
-                text: 'bilhões de usuários ativos',
+                text: 'milhões de usuários ativos',
                 font: {
                     color: getCSS('--secondary-color')
                 }
             }
         }
-
     }
 
     criarGrafico(data, layout)
 }
 
-quantidadeUsuariosPorRede()
+quantidadeUsuariosAprendendoViolao()
