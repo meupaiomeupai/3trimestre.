@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório das Redes Sociais - Mundo</title>
+    <title>Site de Violão - Aprenda e Toque</title>
     <link rel="stylesheet" href="style.css"> <!-- Seu arquivo CSS -->
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
 </head>
@@ -12,31 +12,39 @@
 <body>
     <!-- Cabeçalho do site -->
     <header>
-        <h1>Relatório das Redes Sociais</h1>
+        <h1>Bem-vindo ao Mundo do Violão</h1>
         <nav>
             <!-- Links de navegação -->
-            <a href="index.html">Mundo</a>
-            <a href="minha-escola.html">Minha Escola</a>
+            <a href="index.html">Início</a>
+            <a href="aulas.html">Aulas</a>
+            <a href="dicas.html">Dicas de Violão</a>
+            <a href="sobre.html">Sobre</a>
         </nav>
     </header>
 
-    <!-- Seção principal para gráficos -->
-    <main class="graficos-section">
+    <!-- Seção principal para conteúdos de violão -->
+    <main class="conteudo-section">
+        <section id="conteudo-container" class="conteudo-container">
+            <h2>Aprenda a Tocar Violão!</h2>
+            <p>Se você está começando agora ou já tem alguma experiência, aqui você encontra tutoriais, dicas, partituras e muito mais para melhorar suas habilidades.</p>
+            <!-- Você pode colocar vídeos, imagens ou outros conteúdos interativos aqui -->
+        </section>
+        
+        <!-- Seção de gráficos ou informações -->
         <section id="graficos-container" class="graficos-container">
-            <!-- Área onde os gráficos serão inseridos -->
+            <!-- Adicione gráficos ou outras representações de dados sobre violão aqui -->
         </section>
     </main>
 
     <!-- Rodapé -->
     <footer>
-        <p>Desenvolvido por Gui Lima</p>
+        <p>Desenvolvido por Gui Lima - 2024</p>
     </footer>
 
     <!-- Scripts JavaScript -->
-    <script type="module" src="graficos/common.js"></script> <!-- Script comum -->
-    <script type="module" src="graficos/informacoesGlobais.js"></script> <!-- Informações globais -->
-    <script type="module" src="graficos/quantidadeUsuarios.js"></script> <!-- Quantidade de usuários -->
-    <script type="module" src="graficos/redesFavoritasMundo.js"></script> <!-- Redes favoritas no mundo -->
+    <script type="module" src="graficos/common.js"></script> <!-- Script comum para gráficos -->
+    <script type="module" src="graficos/aulasViolao.js"></script> <!-- Aulas de violão -->
+    <script type="module" src="graficos/dicasViolao.js"></script> <!-- Dicas de violão -->
 </body>
 
 </html>
