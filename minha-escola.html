@@ -3,28 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redes Sociais - Minha Escola</title>
+    <title>Violão - Aprendizado e Dicas</title>
     <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo de estilo CSS -->
-    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script> <!-- Biblioteca de gráficos Plotly -->
 </head>
 <body>
     <!-- Cabeçalho do site -->
     <header>
-        <h1>Relatório das Redes Sociais na Minha Escola</h1>
+        <h1>Aprenda Violão</h1>
         <nav>
             <!-- Links de navegação -->
             <a href="index.html">Início</a>
-            <a href="minha-escola.html">Minha Escola</a>
+            <a href="aulas.html">Aulas</a>
+            <a href="dicas.html">Dicas</a>
             <a href="sobre.html">Sobre</a> <!-- Novo link para a seção 'Sobre' -->
         </nav>
     </header>
 
-    <!-- Seção principal com gráficos -->
-    <main class="graficos-section">
-        <section id="graficos-container" class="graficos-container">
-            <h2>Análise das Redes Sociais</h2>
-            <p>Esta página mostra os gráficos sobre o uso das redes sociais na nossa escola, incluindo as redes sociais mais populares entre os estudantes e dados sobre o tempo de uso.</p>
-            <!-- Área onde os gráficos/texto serão exibidos -->
+    <!-- Seção principal com informações -->
+    <main class="content-section">
+        <section id="introducao" class="intro-section">
+            <h2>Bem-vindo ao Mundo do Violão!</h2>
+            <p>Este site foi criado para ajudar iniciantes e músicos de todos os níveis a aprenderem violão. Você encontrará dicas, aulas e conteúdos que te ajudarão a melhorar suas habilidades.</p>
+        </section>
+
+        <!-- Seção de aulas -->
+        <section id="aulas" class="aulas-section">
+            <h2>Aulas de Violão</h2>
+            <p>Aprenda as técnicas e acordes essenciais para tocar violão. Veja as aulas divididas por nível de dificuldade:</p>
+            <ul>
+                <li><a href="aula-iniciante.html">Aula para Iniciantes</a></li>
+                <li><a href="aula-intermediario.html">Aula Intermediária</a></li>
+                <li><a href="aula-avancada.html">Aula Avançada</a></li>
+            </ul>
+        </section>
+
+        <!-- Seção de dicas -->
+        <section id="dicas" class="dicas-section">
+            <h2>Dicas para Violonistas</h2>
+            <p>Confira algumas dicas para melhorar sua técnica, afinação e desempenho no violão:</p>
+            <ul>
+                <li>Como afinar seu violão corretamente</li>
+                <li>Exercícios de aquecimento para os dedos</li>
+                <li>Como melhorar a transição entre acordes</li>
+            </ul>
+        </section>
+
+        <!-- Gráficos de evolução (opcional) -->
+        <section id="evolucao" class="graficos-section">
+            <h2>Evolução no Aprendizado</h2>
+            <p>Confira gráficos que mostram a evolução do aprendizado no violão. Você pode acompanhar seu progresso ao longo do tempo e comparar com outros alunos.</p>
+            <div id="graficos-container" class="graficos-container">
+                <!-- Aqui você pode adicionar gráficos utilizando a biblioteca Plotly, se necessário -->
+            </div>
         </section>
     </main>
 
@@ -34,7 +64,7 @@
     </footer>
 
     <!-- Scripts JavaScript -->
-    <script type="module" src="graficos/common.js"></script> <!-- Funções comuns para os gráficos -->
-    <script type="module" src="graficos/redesSociaisMinhaEscola.js"></script> <!-- Gráficos específicos para 'Minha Escola' -->
+    <script src="graficos/common.js"></script> <!-- Funções comuns para os gráficos -->
+    <script src="graficos/evolucaoAprendizado.js"></script> <!-- Gráficos sobre evolução de aprendizado -->
 </body>
 </html>
