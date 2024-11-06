@@ -1,30 +1,48 @@
-const getCSS = (variavel) => {
-    return getComputedStyle(document.body).getPropertyValue(variavel)
+import { getCSS, criarGrafico, incluirTexto } from "./common.js";
+
+async function preferenciaMetodoViolao() {
+    // Simulando dados de preferência dos alunos sobre como aprendem violão
+    const dados = {
+        "Aulas presenciais": 50,
+        "Aulas online": 30,
+        "Autodidata": 20
+    };
+
+    const preferencias = Object.keys(dados);
+    const valores = Object.values(dados);
+
+    const data = [
+        {
+            values: valores,
+            labels: preferencias,
+            type: 'pie',
+            textinfo: 'label+percent'
+        }
+    ];
+
+    const layout = {
+        plot_bgcolor: getCSS('--bg-color'),
+        paper_bgcolor: getCSS('--bg-color'),
+        height: 700,
+        title: {
+            text: 'Métodos Preferidos para Aprender Violão',
+            x: 0,
+            font: {
+                color: getCSS('--primary-color'),
+                family: getCSS('--font'),
+                size: 30
+            }
+        },
+        legend: {
+            font: {
+                color: getCSS('--primary-color'),
+                size: 16
+            }
+        }
+    };
+
+    criarGrafico(data, layout);
+    incluirTexto(`A maioria dos alunos prefere aprender violão por <span>Aulas presenciais</span>, seguidas por aulas online. <br>Uma pequena parte opta por ser <span>Autodidata</span>.`);
 }
 
-const tickConfig = {
-    color: getCSS('--primary-color'),
-    size: 16,
-    family: getCSS('--font')
-}
-
-function criarGrafico(data, layout) {
-    const grafico = document.createElement('div')
-    grafico.className = 'grafico'
-    document.getElementById('graficos-container').appendChild(grafico)
-    const config = {
-        responsive: true,
-        displayModeBar: false
-    }
-    Plotly.newPlot(grafico, data, layout, config)
-}
-
-function incluirTexto(texto) {
-    const container = document.getElementById('graficos-container')
-    const paragrafo = document.createElement('p')
-    paragrafo.classList.add('graficos-container__texto')
-    paragrafo.innerHTML = texto
-    container.appendChild(paragrafo)
-}
-
-export { getCSS, tickConfig, criarGrafico, incluirTexto }
+preferenciaMetodoViolao();
